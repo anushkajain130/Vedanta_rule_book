@@ -1,0 +1,123 @@
+.container {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  z-index: 100;
+  perspective: 1300px;
+  backface-visibility: hidden;
+  margin: 2rem auto;
+}
+
+.page {
+  position: absolute;
+  transform-style: preserve-3d;
+  transition-property: transform;
+  width: 50%;
+  height: 100%;
+  left: 50%;
+  transform-origin: left center;
+}
+
+.page:first-child,
+.page:first-child .back {
+  transform: rotateY(180deg);
+}
+
+.page:first-child {
+  z-index: 102;
+}
+
+.page:nth-child(2) {
+  z-index: 103;
+  transition: transform 0.8s ease-in-out;
+}
+
+.page:nth-child(2).flipping {
+  transform: rotateY(-180deg);
+}
+
+.page:nth-child(3) {
+  z-index: 101;
+}
+
+.page > div,
+.outer,
+.content,
+.helperClass {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.page > div {
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+.back {
+  transform: rotateY(-180deg);
+}
+
+.outer {
+  width: 100%;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.content {
+  width: 200%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.front .content {
+  left: -100%;
+}
+
+.content img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prev, .next {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  z-index: 999;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.prev {
+  top: 0;
+  left: 0;
+}
+
+.next {
+  top: 0;
+  left: 50%;
+}
+
+.noContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.noContent p {
+  color: #666;
+  font-size: 1.2rem;
+}

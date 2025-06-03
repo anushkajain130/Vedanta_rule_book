@@ -1,0 +1,31 @@
+.topicPage {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 80vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .topicPage {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .sidebar {
+    position: static;
+  }
+}

@@ -1,0 +1,38 @@
+.topicList {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.topicList h3 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.topicList ul {
+  list-style: none;
+}
+
+.topicList li {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.topicList li:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.topicList li.active {
+  background: #007bff;
+  color: white;
+  border-left-color: #0056b3;
+}
