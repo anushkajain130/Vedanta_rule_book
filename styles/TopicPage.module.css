@@ -11,12 +11,14 @@
   position: sticky;
   top: 2rem;
   height: fit-content;
+  padding: 3rem 0;
 }
 
 .content {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5rem 0;
 }
 
 @media (max-width: 768px) {
