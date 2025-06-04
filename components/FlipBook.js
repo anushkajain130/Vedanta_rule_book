@@ -32,7 +32,6 @@ const Page = React.forwardRef(({ src, pageNumber }, ref) => (
         src={src}
         alt={`Page ${pageNumber}`}
         className={styles.pageImage}
-        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
         onError={() => console.error(`❌ Page image failed to load: ${src}`)}
         onLoad={() => console.log(`✅ Page image loaded: ${src}`)}
       />
@@ -79,13 +78,15 @@ export default function FlipBook({ content = [] }) {
   }
 
   return (
-    <div style={{ height: '100%' }}>
+    <div style={{ height: '70vh' 
+    // , width: '50vw'
+    , display: 'flex', flexDirection: 'column', alignItems: "centre" , justifyContent: "centre" , gap:".5rem" , padding:".5rem 0"}} >
       
       <HTMLFlipBook
         key={contentKey}
         ref={flipBookRef}
-        width={Math.floor(window.innerWidth * 0.25)} 
-        height={Math.floor(window.innerHeight * 0.6)} 
+        width={Math.floor(window.innerWidth * 0.6)} 
+        height={Math.floor(window.innerHeight * 0.7)} 
         onFlip={handleFlip}
         onInit={(e) => setTotalPages(e.object.getPageCount())}
         className={styles.flipBook}
