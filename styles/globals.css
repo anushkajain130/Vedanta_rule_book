@@ -11,7 +11,7 @@ body {
   font-family: 'Abel', sans-serif;
   background: #e8f6e9;
   height: 100vh;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 .layout {
@@ -19,7 +19,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 .header {
@@ -47,12 +47,22 @@ body {
 }
 
 .footer {
+  position: fixed;
+  margin-top: .2rem;
+  bottom: 0; 
+  height: fit-content;       /* Positions footer at the bottom */
+  left: 0;          /* Aligns to the left edge */
+  right: 0;         /* Aligns to the right edge */
+  width: 100%;      /* Alternative: spans full width */
   background: #0285bd;
   color: white;
   text-align: center;
-  /* padding: 1rem; */
+  /* padding: 1rem;    */
+   /* Uncomment for better spacing */
   backdrop-filter: blur(10px);
+  z-index: 1000;    /* Ensures footer stays above other content */
 }
+
 
 .home-page {
   background: url('/cover_pic.webp') center center / contain no-repeat;
